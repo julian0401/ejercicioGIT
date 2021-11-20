@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fibonacci</title>
+</head>
+<body>
+
+<script>
+	
+// take input from the user
+const numeroDeElementos = parseInt(prompt('Ingrese el numero: '));
+let num1 = 0;
+let num2 = 1;
+let  nextTerm;
+let varconsole =  "";
+
+console.log('Fibonacci ');
+
+for (let i = 1; i <= numeroDeElementos; i++) {
+    document.write(num1+",");	
+	varconsole = varconsole + num1 + ",";
+    nextTerm = num1 + num2;
+    num1 = num2;
+    num2 = nextTerm;
+}
+console.log(varconsole);
+	
+</script>
+
+
+
+</body>
+</html>
