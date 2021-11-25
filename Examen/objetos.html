@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html lang = "en">
+     <head>
+     <meta charset = "UTF-8">
+     <title> Objeto </title>
+     </head>
+     <body>
+     <script>
+
+let estudiantes = [{nombre: 'martin', edad: 15, nota: 0},{nombre: 'toni', edad: 16, nota: 0},{nombre: 'ed', edad: 17, nota: 0},{nombre: 'camilo', edad: 18, nota: 0}{nombre: 'daniel', edad: 14, nota: 0},{nombre: 'martin', edad: 15, nota: 0}];
+
+
+ class Persona {
+
+    constructor(nombre, edad) {
+        this.nombre = nombre
+         this.edad = edad
+    }
+
+    // Métodos
+    obtDetalles() {
+        console.log(this.nombre);
+        console.log(this.edad);
+    }
+
+    class Estudiante extends Persona {
+        constructor(calificacion) {
+            super();
+			this.calificacion=calificacion;
+        }
+
+        obtDetalles() {
+            console.log(super.nombre);
+            console.log(super.edad);
+            console.log(this.calificacion);
+        }
+    }
+
+    class Profesor extends Persona {
+        constructor(asignatura,nivel) {
+            super();
+			this.asignatura=asignatura;
+			this.nivel=nivel;
+        }
+
+        obtDetalles() {
+            console.log(super.nombre);
+            console.log(super.edad);
+            console.log(this.asignatura);
+            console.log(this.nivel);
+        }
+    }
+
+}
+
+class Grupo {
+    constructor(profesorPromedio,estudiantes) {
+        this.profesorPromedio = profesorPromedio
+         this.estudiantes = estudiantes
+    }
+	
+	calificar(estudiantes){
+		
+	}
+	
+	calcularPromedio(){
+		let sum = estudiantes.reduce((previous, current) => current += previous);
+		let avg = sum / estudiantes.length;
+		return avg;
+	}
+	
+	obtDetalles() {
+            console.log(this.profesorPromedio);
+            console.log(this.estudiantes);
+        }
+
+}
+
+ </script>
+
+ </body>
+</html>

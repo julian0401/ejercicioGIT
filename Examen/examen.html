@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Examen</title>
+</head>
+<body>
+
+<script>
+	
+var foo =  parseInt(prompt('Ingrese punto a validar  (1=Salida Consola)  (2=Factorial de un numero) (3=Par o Impar) (4=Polindromo) (5=Combinacion Letras)'));
+switch (foo) {
+  case 1:
+		var numero1 = 5;
+		var numero2 = 8;
+		if(numero1 < numero2) {
+			console.log("numero1 no es mayor que numero2");
+		}
+		if(numero2 >= 0) {
+			console.log("numero2 es positivo");
+		}
+		if(numero1 < 0) {
+			console.log("numero1 es negativo o distinto de cero");
+		}
+		if((numero1+1) <= numero2 ) {
+			console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+		}
+		document.write("Por favor revise la consola");
+		break;
+  case 2: 
+		const numeroDeElementos = parseInt(prompt('Ingrese numero para saber factorial: '));
+		document.write(factorial (numeroDeElementos));
+		break;
+  case 3: 
+		const numero= parseInt(prompt('Ingrese numero: '));
+		document.write(parOimpar(numero));	
+    break; 
+  case 4:
+		if(palindromo()){
+			document.write("La palabra o frase ES palíndromo");
+		}else{
+			document.write("La palabra o frase NO ES palíndromo");
+		}
+    break;
+	  case 5:
+			document.write(permutaciones('casa'));
+			break;
+  default:
+    alert('Valor Ingresado NO es correcto');
+}
+
+	
+	
+	
+function factorial (num) {
+	var resultado = 1; 
+	for (i=1; i<=num; i++) {
+		resultado = resultado * i; 
+	}
+	return resultado; 
+}
+
+function parOimpar (num) {
+	  if(num % 2 == 0) {
+			return "NUMERO PAR";
+		}
+		else {
+			return "NUMERO IMPAR";
+		}
+}
+	
+function palindromo() {
+	var palabra=prompt("Escribe una palabra").toLowerCase();
+	// eliminamos los espacios en blanco
+	palabra=palabra.replace(/ /g, "");
+	for (var i=0;i<palabra.length;i++){
+		if(palabra[i]!=palabra[palabra.length-i-1]){
+			return false;
+		}
+	}
+	return true;
+}
+ 
+function permutaciones(text){
+		
+		if (text.length <= 2){
+				return text.length ===2 ? [text, text[1] + text[0]] : [text];
+		}
+		return text.split("").reduce((a,c,i) => a.concat(permutaciones(text.slice(0,i) + text.slice(i+1)).map(v => c + v)) , []);
+		
+ }
+
+	
+</script>
+
+
+
+</body>
+</html>
